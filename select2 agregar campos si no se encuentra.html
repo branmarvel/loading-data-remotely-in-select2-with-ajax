@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.js"></script>
+
+    <select style="width: 200px;" id="continent">
+        <option value="AL">Asia</option>
+        <option value="AK">Europe</option>
+    </select>
+    <script>
+        //var value = prompt("Do you have a state abbriviation for "+typed+"?");
+
+        var typed = "";
+        $('#continent').select2({
+            language: {
+                noResults: function (term) {
+                    console.log(event.target.value);
+                    typed = event.target.value;
+                    if (typed.length > 4) {
+                        continentVal = prompt("Sorry ! Not found any continent do you want to add new continent");
+                        console.log(' === ' + continentVal);
+                        if (continentVal != "") {
+                            console.log('Here we go ' + event.target.value + continentVal);
+                            // Create a DOM Option and pre-select by default
+                            var newOption = new Option(continentVal, continentVal, true, true);
+                            // Append it to the select
+                            $('#continent').append(newOption).trigger('change');
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>
