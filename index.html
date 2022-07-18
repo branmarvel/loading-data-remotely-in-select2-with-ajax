@@ -37,6 +37,7 @@
                         };
                     },
                     processResults: function (response) {
+                        console.log(response)
                         return {
                             results: response
                         };
@@ -84,6 +85,7 @@
     <script>
         $(document).ready(function () {
             $("#state").select2({
+
                 tags: true
             });
 
