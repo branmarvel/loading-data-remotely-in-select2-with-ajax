@@ -14,13 +14,15 @@
     <!-- select2 script -->
     <script src='select2/dist/js/select2.min.js'></script>
 </head>
-
+<!-- 
 <body>
 
     <h1>select con ajax</h1>
     <select id='selUser' style='width: 200px;'>
         <option value='0'>- Search user -</option>
     </select>
+
+
 
     <script>
 
@@ -77,6 +79,8 @@
             }
         });
 
+        $('#select_default').select2();
+
     </script>
 
 
@@ -121,6 +125,23 @@
         });
         $(document).on("select2:open", () => {
             document.querySelector(".select2-container--open .select2-search__field").focus()
+        })
+    </script>
+</body> -->
+
+<body>
+    <select name="" id="select_default">
+        <option value='0'>- Search user -</option>
+        <option value='0'>- Search user -</option>
+        <option value='0'>- Search user -</option>
+        <option value='0'>- Search user -</option>
+
+    </select>
+
+    <script>
+        $("#select_default").select2({
+
+
         })
     </script>
 </body>
